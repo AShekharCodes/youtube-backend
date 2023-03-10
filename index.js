@@ -1,6 +1,11 @@
+const express = require("express");
+const app = require("./src/app.js");
 const mongoose = require("mongoose");
-const subscriberModel = require("./models/subscribers");
-const data = require("./data");
+const port = 3000;
+
+// Parse JSON bodies (as sent by API clients)
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 // Connect to DATABASE
 const DATABASE_URL =
@@ -13,10 +18,5 @@ const db = mongoose.connection;
 db.on("error", (err) => console.log(err));
 db.once("open", () => console.log("Connected to Atlas DB!"));
 
-const refreshAll = async () => {
-  await subscriberModel.deleteMany({});
-  // console.log(connection)
-  await subscriberModel.insertMany(data);
-  await mongoose.disconnect();
-};
-refreshAll();
+// Start Server
+app.listen(port, () => console.log(`App listening on port ${port}!`));
