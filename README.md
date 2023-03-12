@@ -2,7 +2,7 @@
 
 In this project, you can access data from Atlas Database in few ways like through id, or by names, or all data. It will send all responses in json only with a proper format. Data about some subscribers is already stored in the database or you can modify the data.js file and add your own data also by running createDatabase.js file after adding your data.
 
-## Link to website -> [Youtube-Backend](https://resumebyabhishek.netlify.app/)
+## Link to website -> [Youtube-Backend](https://youtube-backend-mu.vercel.app/)
 
 ## Technologies that are used.
 
