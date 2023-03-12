@@ -1,15 +1,10 @@
-const express = require("express");
-const app = require("./src/app.js");
+const app = require("./src/app");
 const mongoose = require("mongoose");
 const port = 3000;
 
-// Parse JSON bodies (as sent by API clients)
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-
-// Connect to DATABASE
+// Connect to Database
 const DATABASE_URL =
-  "mongodb+srv://abhishek:abhishek@backend-project.l8vxa1d.mongodb.net/?retryWrites=true&w=majority";
+  "mongodb+srv://abhishek:abhishek@backend-project.l8vxa1d.mongodb.net/subscribersData?retryWrites=true&w=majority";
 mongoose.connect(DATABASE_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
